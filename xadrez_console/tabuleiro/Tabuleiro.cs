@@ -17,4 +17,11 @@ class Tabuleiro
     {
         return pecas[linha, coluna];
     }
+
+    public void colocarPeca(Peca peca, Posicao posicao)
+    {
+        pecas[posicao.Linha, posicao.Coluna] = peca;
+
+        peca.Posicao = posicao;
+    }
 }

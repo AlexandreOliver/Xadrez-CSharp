@@ -12,11 +12,11 @@ class Tela
             {
                 if (tab.peca(i, j) == null)
                 {
-                    Console.Write("- ");
+                    Console.Write("-  ");
                 }
                 else
                 {
-                    Console.Write(tab.peca(i, j));
+                    Console.Write($"{tab.peca(i, j)}  ");
                 }
                
             }
