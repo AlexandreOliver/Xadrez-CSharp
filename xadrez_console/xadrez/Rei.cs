@@ -1,11 +1,11 @@
 using xadrez_console.tabuleiro;
 
 
-namespace xadrez_console.pecasXadrez
+namespace xadrez
 {
-    class Torre : Peca
+    class Rei : Peca
     {
-        public Torre(Tabuleiro tab, Cor cor)
+        public Rei(Tabuleiro tab, Cor cor)
             : base(tab, cor)
         {
 
@@ -13,7 +13,7 @@ namespace xadrez_console.pecasXadrez
 
         public override string ToString()
         {
-            return "T";
+            return "R";
         }
     }
 }

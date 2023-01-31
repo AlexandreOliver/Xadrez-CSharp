@@ -1,5 +1,5 @@
 ﻿using xadrez_console.tabuleiro;
-using xadrez_console.pecasXadrez;
+using xadrez;
 using xadrez_console;
 
 try
