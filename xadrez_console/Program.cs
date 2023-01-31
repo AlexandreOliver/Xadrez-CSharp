@@ -1,4 +1,4 @@
-﻿using xadrez_console.tabuleiro;
+﻿using tabuleiro;
 using xadrez;
 using xadrez_console;
 
