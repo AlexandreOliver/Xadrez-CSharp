@@ -13,5 +13,10 @@ class Peca
         Cor = cor;
         QntMovimentos = 0;
         Tab = tab;
-    }    
+    }
+
+    public void addMovimento()
+    {
+        QntMovimentos++; 
+    }
 }
