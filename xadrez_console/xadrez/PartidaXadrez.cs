@@ -22,6 +22,7 @@ class PartidaXadrez
 
     public void executarMovimento(Posicao origem, Posicao destino)
     {
+        
         Peca? p = tab.retirarPeca(origem);
         p.addMovimento();
         Peca? PecaCaptu = tab.retirarPeca(destino);
