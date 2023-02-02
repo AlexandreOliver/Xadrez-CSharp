@@ -11,9 +11,7 @@ try
         try
         {
             Console.Clear();
-            Tela.ImprimirTabuleiro(partida.tab);
-            Console.WriteLine("\nTurno: " + partida.turno);
-            Console.WriteLine("Aguardando Jodada do " + partida.jogadorAtual);
+            Tela.ImprimirPartida(partida);
 
             Console.Write("\nOrigem: ");
             Posicao origem = Tela.lerPosicaoXadrez().toPosicao();
@@ -22,9 +20,7 @@ try
             bool[,] posicaoPossiveis = partida.tab.peca(origem).movimentosPossiveis();
 
             Console.Clear();
-            Tela.ImprimirTabuleiro(partida.tab, posicaoPossiveis);
-            Console.WriteLine("\nTurno: " + partida.turno);
-            Console.WriteLine("Aguardando Jodada do " + partida.jogadorAtual);
+            Tela.ImprimirPartida(partida, posicaoPossiveis);            
 
             Console.Write("\nDestino: ");
             Posicao destino = Tela.lerPosicaoXadrez().toPosicao();
