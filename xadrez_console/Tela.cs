@@ -12,9 +12,17 @@ class Tela
         ImprimirPecasCapturadas(partida);
         Console.WriteLine();
         Console.WriteLine("\nTurno: " + partida.turno);
-        Console.WriteLine("Aguardando Jogada do " + partida.jogadorAtual);
-        if (partida.xeque)
-        { Console.WriteLine("Xeque!"); }
+        if (!partida.terminada)
+        {
+            Console.WriteLine("Aguardando Jogada do " + partida.jogadorAtual);
+            if (partida.xeque)
+            { Console.WriteLine("Xeque!"); }
+        }
+        else
+        {
+            Console.WriteLine("\nXeque-Mate!");
+            Console.WriteLine("Vencedor: " + partida.jogadorAtual);
+        }
     }
 
     
