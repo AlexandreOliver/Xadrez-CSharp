@@ -13,6 +13,8 @@ class Tela
         Console.WriteLine();
         Console.WriteLine("\nTurno: " + partida.turno);
         Console.WriteLine("Aguardando Jogada do " + partida.jogadorAtual);
+        if (partida.xeque)
+        { Console.WriteLine("Xeque!"); }
     }
 
     
