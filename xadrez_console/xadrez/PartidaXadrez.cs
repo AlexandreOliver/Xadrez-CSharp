@@ -153,6 +153,21 @@ class PartidaXadrez
             throw new TabuleiroException("Movimento Invalido: Seu rei esta em xeque!");
         }
 
+        Peca p = tab.peca(destino);
+
+        // JogadaEspecial Promocao
+        if (p is Peao)
+        {
+            if (p.Cor == Cor.Branco && destino.Linha == 0 || p.Cor == Cor.Preto && destino.Linha == tab.Linhas - 1)
+            {
+                p = tab.retirarPeca(destino);
+                pecas.Remove(p);
+                Peca dama = new Dama(tab, p.Cor);
+                tab.colocarPeca(dama, destino);
+                pecas.Add(dama);
+            }
+        }
+        
         xeque = (estaEmXeque(adversario(jogadorAtual)))? true : false;
 
         if (testeXequeMate(adversario(jogadorAtual)))
@@ -164,7 +179,7 @@ class PartidaXadrez
             turno++;
             mudaJogador();
         } 
-        Peca p = tab.peca(destino);
+        
 
         //#JogadaEspecial EnPassant
         if (p is Peao && (destino.Linha == origem.Linha - 2 || destino.Linha == origem.Linha + 2))
