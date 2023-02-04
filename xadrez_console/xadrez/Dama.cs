@@ -75,39 +75,59 @@ class Dama : Peca
             pos.definirValores(pos.Linha + 1, pos.Coluna - 1);
         }
 
+
         // Acima
         pos.definirValores(Posicao.Linha - 1, Posicao.Coluna);
-        if (Tab.posicaoValida(pos) && podeMover(pos))
+        while (Tab.posicaoValida(pos) && podeMover(pos))
+        {
             mat[pos.Linha, pos.Coluna] = true;
-        // nordeste
-        pos.definirValores(Posicao.Linha - 1, Posicao.Coluna + 1);
-        if (Tab.posicaoValida(pos) && podeMover(pos))
+            if (Tab.peca(pos) != null && Tab.peca(pos).Cor != Cor)
+                break;
+
+            pos.Linha--;
+        }   
+        // Acima
+        pos.definirValores(Posicao.Linha - 1, Posicao.Coluna);
+        while (Tab.posicaoValida(pos) && podeMover(pos))
+        {
             mat[pos.Linha, pos.Coluna] = true;
+            if (Tab.peca(pos) != null && Tab.peca(pos).Cor != Cor)
+                break;
+
+            pos.Linha++;
+        }
         // Direita
         pos.definirValores(Posicao.Linha, Posicao.Coluna + 1);
-        if (Tab.posicaoValida(pos) && podeMover(pos))
+        while (Tab.posicaoValida(pos) && podeMover(pos))
+        {
             mat[pos.Linha, pos.Coluna] = true;
-        // sudeste
-        pos.definirValores(Posicao.Linha + 1, Posicao.Coluna + 1);
-        if (Tab.posicaoValida(pos) && podeMover(pos))
-            mat[pos.Linha, pos.Coluna] = true;
+            if (Tab.peca(pos) != null && Tab.peca(pos).Cor != Cor)
+                break;
+
+            pos.Coluna++;
+        }
         // abaixo
         pos.definirValores(Posicao.Linha + 1, Posicao.Coluna);
-        if (Tab.posicaoValida(pos) && podeMover(pos))
+        while (Tab.posicaoValida(pos) && podeMover(pos))
+        {
             mat[pos.Linha, pos.Coluna] = true;
-        // sudoeste
-        pos.definirValores(Posicao.Linha + 1, Posicao.Coluna - 1);
-        if (Tab.posicaoValida(pos) && podeMover(pos))
-            mat[pos.Linha, pos.Coluna] = true;
+            if (Tab.peca(pos) != null && Tab.peca(pos).Cor != Cor)
+                break;
+
+            pos.Linha++;
+        }
+        
         // esquerda
         pos.definirValores(Posicao.Linha, Posicao.Coluna - 1);
-        if (Tab.posicaoValida(pos) && podeMover(pos))
+        while (Tab.posicaoValida(pos) && podeMover(pos))
+        {
             mat[pos.Linha, pos.Coluna] = true;
-        // noroeste
-        pos.definirValores(Posicao.Linha - 1, Posicao.Coluna - 1);
-        if (Tab.posicaoValida(pos) && podeMover(pos))
-            mat[pos.Linha, pos.Coluna] = true;        
-    
+            if (Tab.peca(pos) != null && Tab.peca(pos).Cor != Cor)
+                break;
+
+            pos.Coluna--;
+        }
+
         return mat;
     }
 }
